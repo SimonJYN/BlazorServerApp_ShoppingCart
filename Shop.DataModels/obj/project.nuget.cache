@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "dgSpecHash": "OJPfkhXgIY/uXP7R8xxvao9LwcLKeg812ylvtjVXk5X718pEGHkKLtFqqqc7JNNWZfse9G0oKlgr3m01as+FcQ==",
+  "success": true,
+  "projectFilePath": "D:\\Projects\\BlazorServerApp_ShoppingCart\\Shop.DataModels\\Shop.DataModels.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Simon Jiang\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.26\\microsoft.windowsdesktop.app.ref.6.0.26.nupkg.sha512",
+    "C:\\Users\\Simon Jiang\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.26\\microsoft.netcore.app.ref.6.0.26.nupkg.sha512",
+    "C:\\Users\\Simon Jiang\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.26\\microsoft.aspnetcore.app.ref.6.0.26.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1900",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "获取包漏洞数据时出错: 对路径“C:\\Users\\Simon Jiang\\AppData\\Local\\NuGet\\v3-cache\\670c1461c29885f9aa22c281d8b7da90845b38e4$ps_api.nuget.org_v3_index.json\\vuln_index.dat-new”的访问被拒绝。"
+    }
+  ]
+}
