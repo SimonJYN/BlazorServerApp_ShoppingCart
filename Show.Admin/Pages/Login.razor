@@ -2,6 +2,7 @@
 @using Shop.DataModels.CustomModels;
 @using Show.Admin.Services
 @inject IAdminPanelService adminPanelService;
+@inject ProtectedSessionStorage sessionStorage;
 @inject NavigationManager navManager;
 
 
@@ -86,6 +87,9 @@
 </div>
 
 @code {
+	[CascadingParameter]
+	public EventCallback notify { get; set; }//注册MainLayout的通知事件
+
 	public LoginModel loginModel { get; set; }
 	public string alertMessage { get; set; }
 
@@ -100,6 +104,13 @@
 		ResponseModel response = await adminPanelService.AdminLogin(loginModel);
 		if (response.Status)
 		{
+			var userResponse = response.Message.Split(" | ");
+			//拆分回调消息中的返回值并发送回MainLayout
+			await sessionStorage.SetAsync("adminId", userResponse[0]);
+			await sessionStorage.SetAsync("adminName", userResponse[1]);
+			await sessionStorage.SetAsync("adminEmail", userResponse[2]);
+			await notify.InvokeAsync();
+			await notify.InvokeAsync();
 			navManager.NavigateTo("/");
 		}
 		else

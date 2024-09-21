@@ -1,5 +1,6 @@
 ﻿@inherits LayoutComponentBase
 
+@inject ProtectedSessionStorage sessionStorage;
 @inject NavigationManager navManager;
 
 <PageTitle>Show.Admin</PageTitle>
@@ -21,16 +22,38 @@
 		}
 
 		<article class="content px-4">
-			@Body
+			<CascadingValue Value="event_notify">
+				@Body
+
+			</CascadingValue>
 		</article>
 	</main>
 </div>
 
 @code {
 	public bool IsAdminLoggedIn = false;
+	//声明通知事件
+	EventCallback event_notify => EventCallback.Factory.Create(this, NotifyLayout);
 
-	public void Logout()
+	public async void Logout()
 	{
+		await sessionStorage.DeleteAsync("adminId");
+		// await NotifyLayout();
 		navManager.NavigateTo("/login");
+	}
+
+	//实现事件 (用户如果未登录，则会直接跳转回登录界面)
+	private async Task NotifyLayout()
+	{
+		var adminSession = await sessionStorage.GetAsync<string>("adminId");
+		if (adminSession.Success)
+		{
+			IsAdminLoggedIn = true;
+		}
+		else
+		{
+			IsAdminLoggedIn = false;
+			navManager.NavigateTo("/login");
+		}
 	}
 }

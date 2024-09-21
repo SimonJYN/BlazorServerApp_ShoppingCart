@@ -3,5 +3,15 @@
 <h3>Orders</h3>
 
 @code {
+	[CascadingParameter]
+	public EventCallback notify { get; set; }//注册MainLayout的通知事件
 
+	protected override async Task OnAfterRenderAsync(bool firstRender)
+	{
+		if (firstRender)
+		{
+			// 当组件第一次渲染后，调用通知事件(确保不会未登录的时候访问此页面)
+			await notify.InvokeAsync();
+		}
+	}
 }
