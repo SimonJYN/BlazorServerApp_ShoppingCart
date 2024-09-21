@@ -1,0 +1,16 @@
+D:\Projects\BlazorServerApp_ShoppingCart\Shop.Logic\bin\Debug\net6.0\Shop.Logic.deps.json
+D:\Projects\BlazorServerApp_ShoppingCart\Shop.Logic\bin\Debug\net6.0\Shop.Logic.dll
+D:\Projects\BlazorServerApp_ShoppingCart\Shop.Logic\bin\Debug\net6.0\Shop.Logic.pdb
+D:\Projects\BlazorServerApp_ShoppingCart\Shop.Logic\obj\Debug\net6.0\Shop.Logic.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\BlazorServerApp_ShoppingCart\Shop.Logic\obj\Debug\net6.0\Shop.Logic.AssemblyInfoInputs.cache
+D:\Projects\BlazorServerApp_ShoppingCart\Shop.Logic\obj\Debug\net6.0\Shop.Logic.AssemblyInfo.cs
+D:\Projects\BlazorServerApp_ShoppingCart\Shop.Logic\obj\Debug\net6.0\Shop.Logic.csproj.CoreCompileInputs.cache
+D:\Projects\BlazorServerApp_ShoppingCart\Shop.Logic\obj\Debug\net6.0\Shop.Logic.sourcelink.json
+D:\Projects\BlazorServerApp_ShoppingCart\Shop.Logic\obj\Debug\net6.0\Shop.Logic.dll
+D:\Projects\BlazorServerApp_ShoppingCart\Shop.Logic\obj\Debug\net6.0\refint\Shop.Logic.dll
+D:\Projects\BlazorServerApp_ShoppingCart\Shop.Logic\obj\Debug\net6.0\Shop.Logic.pdb
+D:\Projects\BlazorServerApp_ShoppingCart\Shop.Logic\obj\Debug\net6.0\ref\Shop.Logic.dll
+D:\Projects\BlazorServerApp_ShoppingCart\Shop.Logic\bin\Debug\net6.0\Shop.DataModels.dll
+D:\Projects\BlazorServerApp_ShoppingCart\Shop.Logic\bin\Debug\net6.0\Shop.DataModels.pdb
+D:\Projects\BlazorServerApp_ShoppingCart\Shop.Logic\obj\Debug\net6.0\Shop.Logic.csproj.AssemblyReference.cache
+D:\Projects\BlazorServerApp_ShoppingCart\Shop.Logic\obj\Debug\net6.0\Shop.Logic.csproj.CopyComplete

@@ -1,0 +1,15 @@
+D:\Projects\BlazorServerApp_ShoppingCart\Shop.DataModels\bin\Debug\net6.0\Shop.DataModels.deps.json
+D:\Projects\BlazorServerApp_ShoppingCart\Shop.DataModels\bin\Debug\net6.0\Shop.DataModels.dll
+D:\Projects\BlazorServerApp_ShoppingCart\Shop.DataModels\bin\Debug\net6.0\Shop.DataModels.pdb
+D:\Projects\BlazorServerApp_ShoppingCart\Shop.DataModels\obj\Debug\net6.0\Shop.DataModels.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\BlazorServerApp_ShoppingCart\Shop.DataModels\obj\Debug\net6.0\Shop.DataModels.AssemblyInfoInputs.cache
+D:\Projects\BlazorServerApp_ShoppingCart\Shop.DataModels\obj\Debug\net6.0\Shop.DataModels.AssemblyInfo.cs
+D:\Projects\BlazorServerApp_ShoppingCart\Shop.DataModels\obj\Debug\net6.0\Shop.DataModels.csproj.CoreCompileInputs.cache
+D:\Projects\BlazorServerApp_ShoppingCart\Shop.DataModels\obj\Debug\net6.0\Shop.DataModels.sourcelink.json
+D:\Projects\BlazorServerApp_ShoppingCart\Shop.DataModels\obj\Debug\net6.0\Shop.DataModels.dll
+D:\Projects\BlazorServerApp_ShoppingCart\Shop.DataModels\obj\Debug\net6.0\refint\Shop.DataModels.dll
+D:\Projects\BlazorServerApp_ShoppingCart\Shop.DataModels\obj\Debug\net6.0\Shop.DataModels.pdb
+D:\Projects\BlazorServerApp_ShoppingCart\Shop.DataModels\obj\Debug\net6.0\ref\Shop.DataModels.dll
+D:\Projects\BlazorServerApp_ShoppingCart\Shop.DataModels\bin\Debug\net6.0\Shop.DataModels.runtimeconfig.json
+D:\Projects\BlazorServerApp_ShoppingCart\Shop.DataModels\obj\Debug\net6.0\Shop.DataModels.csproj.AssemblyReference.cache
+D:\Projects\BlazorServerApp_ShoppingCart\Shop.DataModels\obj\Debug\net6.0\Shop.DataModels.genruntimeconfig.cache
