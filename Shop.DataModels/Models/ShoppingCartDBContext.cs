@@ -24,7 +24,7 @@ namespace Shop.DataModels.Models
 			if (!optionsBuilder.IsConfigured)
 			{
 				//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-				// optionsBuilder.UseSqlite("Data Source=D:\\Projects\\BlazorServerApp_ShoppingCart\\DB\\ShoppingCartDB.db");
+				//optionsBuilder.UseSqlite("Data Source=D:\\Projects\\BlazorServerApp_ShoppingCart\\DB\\ShoppingCartDB.db");
 			}
 		}
 
@@ -32,34 +32,24 @@ namespace Shop.DataModels.Models
 		{
 			modelBuilder.Entity<AdminInfo>(entity =>
 			{
-				entity.HasNoKey();
-
 				entity.ToTable("AdminInfo");
 
-				entity.Property(e => e.CreatedOn).HasColumnType("nvarchar](25");
+				entity.Property(e => e.CreatedOn).HasColumnType("nvarchar] (25");
 
-				entity.Property(e => e.Email).HasColumnType("nvarchar](30");
+				entity.Property(e => e.Email).HasColumnType("nvarchar] (30");
 
-				entity.Property(e => e.Id).HasColumnType("int] IDENTITY(1,1");
+				entity.Property(e => e.LastLogin).HasColumnType("nvarchar] (25");
 
-				entity.Property(e => e.LastLogin).HasColumnType("nvarchar](25");
+				entity.Property(e => e.Name).HasColumnType("nvarchar] (100");
 
-				entity.Property(e => e.Name).HasColumnType("nvarchar](100");
+				entity.Property(e => e.Password).HasColumnType("nvarchar] (6");
 
-				entity.Property(e => e.Password).HasColumnType("nvarchar](6");
-
-				entity.Property(e => e.UpdatedOn).HasColumnType("nvarchar](25");
+				entity.Property(e => e.UpdatedOn).HasColumnType("nvarchar] (25");
 			});
 
 			modelBuilder.Entity<Category>(entity =>
 			{
-				entity.HasNoKey();
-
 				entity.ToTable("Category");
-
-				entity.Property(e => e.Id).HasColumnType("int] IDENTITY(1,1");
-
-				entity.Property(e => e.Name).HasColumnType("nvarchar](100");
 			});
 
 			OnModelCreatingPartial(modelBuilder);

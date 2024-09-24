@@ -31,5 +31,28 @@ namespace Shop.Api.Controllers
 			var data = adminService.SaveCategory(categoryModel);
 			return Ok(data);
 		}
+
+		[HttpGet]
+		[Route("GetCategories")]
+		public IActionResult GetCategories()
+		{
+			var data = adminService.GetCategories();
+			return Ok(data);
+		}
+
+		[HttpPost]
+		[Route("UpdateCategory")] 
+		public IActionResult UpdateCategory(CategoryModel categoryModel)
+		{
+			var data = adminService.UpdateCategory(categoryModel);
+			return Ok(data);
+		}
+		[HttpPost]
+		[Route("DeleteCategory")] 
+		public IActionResult DeleteCategory(CategoryModel categoryModel)
+		{
+			var data = adminService.DeleteCategory(categoryModel);
+			return Ok(data);
+		}
 	}
 }

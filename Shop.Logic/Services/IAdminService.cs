@@ -10,6 +10,10 @@ namespace Shop.Logic.Services
 	public interface IAdminService
 	{
 		ResponseModel AdminLogin(LoginModel loginModel);
-		ResponseModel SaveCategory(CategoryModel categoryModel);
+		CategoryModel SaveCategory(CategoryModel categoryModel);
+		List<CategoryModel> GetCategories();
+		ResponseModel UpdateCategory(CategoryModel categoryModel);
+		ResponseModel DeleteCategory(CategoryModel categoryModel);
+		
 	}
 }

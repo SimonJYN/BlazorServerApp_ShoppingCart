@@ -76,10 +76,54 @@ namespace Show.Admin.Services
 			}
 		}
 
-		public async Task<ResponseModel> SaveCategory(CategoryModel categoryModel)
+		public async Task<CategoryModel> SaveCategory(CategoryModel categoryModel)
 		{
 			// Send the login request to the server
 			HttpResponseMessage response1 = await _httpClient.PostAsJsonAsync("api/admin/SaveCategory", categoryModel);
+
+			// Ensure the request was successful
+			//response.EnsureSuccessStatusCode();
+
+			// Deserialize the response content into a ResponseModel object
+			CategoryModel responseModel = await response1.Content.ReadFromJsonAsync<CategoryModel>();
+
+			// Return the deserialized response model
+			return responseModel;
+		}
+		public async Task<List<CategoryModel>> GetCategories()
+		{
+			// Send the login request to the server
+			HttpResponseMessage response1 = await _httpClient.GetAsync("api/admin/GetCategories");
+
+			// Ensure the request was successful
+			//response.EnsureSuccessStatusCode();
+
+			// Deserialize the response content into a ResponseModel object
+			List<CategoryModel> responseModel = await response1.Content.ReadFromJsonAsync<List<CategoryModel>>();
+
+			// Return the deserialized response model
+			return responseModel;
+		}
+
+		public async Task<ResponseModel> UpdateCategory(CategoryModel categoryModel)
+		{
+			// Send the login request to the server
+			HttpResponseMessage response1 = await _httpClient.PostAsJsonAsync("api/admin/UpdateCategory", categoryModel);
+
+			// Ensure the request was successful
+			//response.EnsureSuccessStatusCode();
+
+			// Deserialize the response content into a ResponseModel object
+			ResponseModel responseModel = await response1.Content.ReadFromJsonAsync<ResponseModel>();
+
+			// Return the deserialized response model
+			return responseModel;
+		}
+
+		public async Task<ResponseModel> DeleteCategory(CategoryModel categoryModel)
+		{
+			// Send the login request to the server
+			HttpResponseMessage response1 = await _httpClient.PostAsJsonAsync("api/admin/DeleteCategory", categoryModel);
 
 			// Ensure the request was successful
 			//response.EnsureSuccessStatusCode();

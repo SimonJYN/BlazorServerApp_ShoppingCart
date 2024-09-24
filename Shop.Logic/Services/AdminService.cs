@@ -1,4 +1,5 @@
-﻿using Shop.DataModels.CustomModels;
+﻿using Microsoft.EntityFrameworkCore;
+using Shop.DataModels.CustomModels;
 using Shop.DataModels.Models;
 using System;
 using System.Collections.Generic;
@@ -51,13 +52,93 @@ namespace Shop.Logic.Services
 			}
 		}
 
-		public ResponseModel SaveCategory(CategoryModel categoryModel)
+		public CategoryModel SaveCategory(CategoryModel categoryModel)
+		{
+			try
+			{
+				Category _category = new Category();
+				_category.Name = categoryModel.Name;
+				dbContext.Add(_category);
+				dbContext.SaveChanges();
+
+				return categoryModel;
+			}
+			catch (Exception ex)
+			{
+				throw;
+			}
+		}
+		public List<CategoryModel> GetCategories()
+		{
+			var data = dbContext.Categories.ToList();
+			List<CategoryModel> _categoryList = new List<CategoryModel>();
+			foreach (var c in data)
+			{
+				CategoryModel _categoryModel = new CategoryModel();
+				_categoryModel.Id = c.Id;
+				_categoryModel.Name = c.Name;
+				_categoryList.Add(_categoryModel);
+			}
+			return _categoryList;
+		}
+
+		public ResponseModel UpdateCategory(CategoryModel categoryModel)
 		{
 			ResponseModel responseModel = new ResponseModel();
-			Console.WriteLine(categoryModel.Name);
-			Console.WriteLine(categoryModel.Id);
+			try
+			{
+				var data = dbContext.Categories.Where(x => x.Id.Equals(categoryModel.Id)).First();
+				if (data != null)
+				{
+					data.Name = categoryModel.Name;
+					dbContext.Categories.Update(data);
+					dbContext.SaveChanges();
+					responseModel.Status = true;
+					responseModel.Message = "类别更新成功";
+				}
+				else
+				{
+					responseModel.Status = false;
+					responseModel.Message = "类别不存在";
+				}
 
-			return responseModel;
+				return responseModel;
+			}
+			catch (Exception)
+			{
+				responseModel.Status = false;
+				responseModel.Message = "发生错误，请再试一次";
+				return responseModel;
+			}
+		}
+
+		public ResponseModel DeleteCategory(CategoryModel categoryModel)
+		{
+			ResponseModel responseModel = new ResponseModel();
+			try
+			{
+				var data = dbContext.Categories.Where(x => x.Id.Equals(categoryModel.Id)).FirstOrDefault();
+				if (data != null)
+				{
+					dbContext.Categories.Remove(data);
+					dbContext.SaveChanges();
+					responseModel.Status = true;
+					responseModel.Message = "类别删除成功:" + categoryModel.Name;
+				}
+				else
+				{
+					responseModel.Status = false;
+					responseModel.Message = "类别不存在";
+				}
+
+				return responseModel;
+			}
+			catch (Exception)
+			{
+				responseModel.Status = false;
+				responseModel.Message = "发生错误，请再试一次";
+				return responseModel;
+			}
 		}
 	}
 }
