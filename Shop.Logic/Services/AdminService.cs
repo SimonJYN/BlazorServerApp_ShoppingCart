@@ -50,5 +50,14 @@ namespace Shop.Logic.Services
 				return responseModel;
 			}
 		}
+
+		public ResponseModel SaveCategory(CategoryModel categoryModel)
+		{
+			ResponseModel responseModel = new ResponseModel();
+			Console.WriteLine(categoryModel.Name);
+			Console.WriteLine(categoryModel.Id);
+
+			return responseModel;
+		}
 	}
 }

@@ -75,5 +75,20 @@ namespace Show.Admin.Services
 				throw; // 或者返回一个错误响应模型
 			}
 		}
+
+		public async Task<ResponseModel> SaveCategory(CategoryModel categoryModel)
+		{
+			// Send the login request to the server
+			HttpResponseMessage response1 = await _httpClient.PostAsJsonAsync("api/admin/SaveCategory", categoryModel);
+
+			// Ensure the request was successful
+			//response.EnsureSuccessStatusCode();
+
+			// Deserialize the response content into a ResponseModel object
+			ResponseModel responseModel = await response1.Content.ReadFromJsonAsync<ResponseModel>();
+
+			// Return the deserialized response model
+			return responseModel;
+		}
 	}
 }
